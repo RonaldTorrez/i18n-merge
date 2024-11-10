@@ -1,0 +1,36 @@
+{
+    "extends": "rollpkg/configs/tsconfig.json",
+    "compilerOptions": {
+        "resolveJsonModule": true,
+        "baseUrl": "./",
+        "paths": {
+            "@schemas/*": [
+                "src/schemas/*"
+            ],
+            "@utils/*": [
+                "src/utils/*"
+            ],
+            "@app/*": [
+                "src/app/*"
+            ],
+            "@cli/*": [
+                "src/cli/*"
+            ],
+            "@test/*": [
+                "__test__/*"
+            ]
+        }
+    },
+    "include": [
+        "src/**/*.ts",
+        "__test__/**/*.ts",
+        "global.d.ts"
+    ],
+    "files": [
+        "global.d.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}

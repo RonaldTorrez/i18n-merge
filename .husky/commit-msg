@@ -1,0 +1,2 @@
+echo "\n ================== \n"
+pnpx commitlint --edit $1

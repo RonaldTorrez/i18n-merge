@@ -1,0 +1,79 @@
+{
+    "name": "i18n-merge",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "build": "rollpkg build --noStats --tsconfig ./tsconfig.build.json",
+        "watch": "rollpkg watch",
+        "prepublishOnly": "pnpm lint && pnpm test && pnpm build",
+        "lint": "pnpx oxlint && pnpm eslint",
+        "lint:fix": "pnpx oxlint --fix && pnpm eslint --fix",
+        "git:push": "pnpm lint && pnpm test && pnpm build",
+        "prepare": "husky",
+        "test": "pnpm jest --passWithNoTests"
+    },
+    "lint-staged": {
+        "*": [
+            "pnpm lint:fix",
+            "pnpm test"
+        ]
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "files": [
+        "dist"
+    ],
+    "dependencies": {
+        "@duplojs/zod-accelerator": "^2.5.0",
+        "cosmiconfig": "^9.0.0",
+        "cosmiconfig-typescript-loader": "^6.0.0",
+        "fast-glob": "^3.3.2",
+        "fs-extra": "^11.2.0",
+        "signale": "^1.4.0",
+        "zod": "^3.23.8",
+        "zod-validation-error": "^3.4.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^19.5.0",
+        "@commitlint/config-conventional": "^19.5.0",
+        "@eslint/compat": "^1.2.2",
+        "@eslint/js": "^9.14.0",
+        "@fast-check/jest": "^2.0.3",
+        "@stylistic/eslint-plugin": "^2.10.1",
+        "@types/fs-extra": "^11.0.4",
+        "@types/jest": "^29.5.14",
+        "@types/node": "^22.9.0",
+        "@types/signale": "^1.4.7",
+        "@typescript-eslint/eslint-plugin": "^8.13.0",
+        "eslint": "~9.13.0",
+        "eslint-plugin-jest": "^28.9.0",
+        "eslint-plugin-jest-extended": "^2.4.0",
+        "eslint-plugin-oxlint": "^0.10.1",
+        "eslint-plugin-perfectionist": "^3.9.1",
+        "eslint-plugin-unicorn": "^56.0.0",
+        "globals": "^15.12.0",
+        "husky": "^9.1.6",
+        "jest": "^29.7.0",
+        "jest-chain": "^1.1.6",
+        "jest-extended": "^4.0.2",
+        "lint-staged": "^15.2.10",
+        "rollpkg": "^0.5.7",
+        "ts-jest": "^29.2.5",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.6.3",
+        "typescript-eslint": "^8.13.0",
+        "zod-fast-check": "^0.10.1",
+        "zod-to-ts": "^1.2.0"
+    },
+    "keywords": [],
+    "packageManager": "pnpm@9.12.3",
+    "author": "Ronald Torrez",
+    "license": "MIT",
+    "main": "dist/i18n-merge.cjs.js",
+    "module": "dist/i18n-merge.esm.js",
+    "types": "dist/index.d.ts",
+    "sideEffects": false
+}
