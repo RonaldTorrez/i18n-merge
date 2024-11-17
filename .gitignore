@@ -6,4 +6,5 @@ dist
 languages
 
 temp*
+i18n-marge.config.ts
 .gitdiff
