@@ -23,7 +23,7 @@ export default [
     unicorn.configs['flat/all'],
     perfectionist.configs['recommended-natural'],
     stylistic.configs.customize({ indent: 4 }),
-    { files: [ '**/*.{js,mjs,cjs,ts,jsx,tsx}' ] },
+    { files: [ '**/*.{js,mjs,cjs,ts,mts}' ] },
     { languageOptions: { globals: globals.node } },
     { ignores: [ 'languages/**/*' ] },
     {
@@ -50,7 +50,11 @@ export default [
                 { blankLine: 'always', next: 'return', prev: '*' },
                 { blankLine: 'always', next: '*', prev: 'if' },
                 { blankLine: 'always', next: '*', prev: [ 'const', 'let', 'var' ] },
-                { blankLine: 'any', next: [ 'const', 'let', 'var' ], prev: [ 'const', 'let', 'var' ] },
+                {
+                    blankLine: 'any',
+                    next: [ 'const', 'let', 'var' ],
+                    prev: [ 'const', 'let', 'var' ],
+                },
             ],
             '@typescript-eslint/ban-ts-comment': 'off',
             '@typescript-eslint/no-unused-vars': 'off',
