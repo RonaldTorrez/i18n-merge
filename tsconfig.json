@@ -4,20 +4,8 @@
         "resolveJsonModule": true,
         "baseUrl": "./",
         "paths": {
-            "@schemas/*": [
-                "src/schemas/*"
-            ],
-            "@utils/*": [
-                "src/utils/*"
-            ],
-            "@app/*": [
-                "src/app/*"
-            ],
-            "@cli/*": [
-                "src/cli/*"
-            ],
-            "@test/*": [
-                "__test__/*"
+            "@/*": [
+                "src/*"
             ]
         }
     },
