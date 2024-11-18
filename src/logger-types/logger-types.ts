@@ -4,7 +4,9 @@ import { CreateLoggerTypes, CreateLoggerTypesSchema } from '@/logger-types/logge
 import { toCamelCase } from '@/utils/string/to-camel-case'
 import { isEmpty } from '@/utils/validation/is-empty'
 
-export function createLoggerTypes(parameters: CreateLoggerTypes): LoggerTypes {
+export function createLoggerTypes(
+    parameters: CreateLoggerTypes,
+): LoggerTypes {
     const {
         color,
         prefix,
