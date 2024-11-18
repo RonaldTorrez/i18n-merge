@@ -5,7 +5,7 @@ import { ZodAccelerator } from '@duplojs/zod-accelerator'
 import { Loader } from 'cosmiconfig'
 import { z } from 'zod'
 
-export const _GetFileConfigSchema = _LoggerSchema.extend({
+export const _FileConfigSchema = _LoggerSchema.extend({
     fileName: _StringNoNSchema
         .default('')
         .describe('The name of the file to load.'),
@@ -33,5 +33,5 @@ export const _GetFileConfigSchema = _LoggerSchema.extend({
             'The loaders to use when loading the file.'),
 })
 
-export type GetFileConfig = z.input<typeof _GetFileConfigSchema>
-export const GetFileConfigSchema = ZodAccelerator.build(_GetFileConfigSchema)
+export type FileConfig = z.input<typeof _FileConfigSchema>
+export const FileConfigSchema = ZodAccelerator.build(_FileConfigSchema)

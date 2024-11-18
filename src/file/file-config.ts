@@ -1,15 +1,15 @@
-import { GetFileConfig, GetFileConfigSchema } from '@/file/file-config.schema'
+import { FileConfig, FileConfigSchema } from '@/file/file-config.schema'
 import { cosmiconfig, PublicExplorer } from 'cosmiconfig'
 import { TypeScriptLoader } from 'cosmiconfig-typescript-loader'
 
-export function getFileConfig(
-    parameters: GetFileConfig,
+export function initFileConfig(
+    parameters: FileConfig,
 ): PublicExplorer {
     const {
         fileName,
         loaders,
         logger,
-    } = GetFileConfigSchema.parse(parameters)
+    } = FileConfigSchema.parse(parameters)
 
     return cosmiconfig(fileName, {
         loaders: {
