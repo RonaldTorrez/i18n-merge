@@ -10,11 +10,11 @@ export const _LoggerSchema = z.object({
         .describe('The logger to use.'),
 })
 
-export const _GetLoggerConfigSchema = z.object({
+export const _LoggerConfigSchema = z.object({
     logLevel: LogLevelEnum
         .default(LogLevelEnum.enum.error)
         .describe('The log level to use.'),
 })
 
-export type GetLoggerConfig = z.input<typeof _GetLoggerConfigSchema>
-export const GetLoggerConfigSchema = ZodAccelerator.build(_GetLoggerConfigSchema)
+export type LoggerConfig = z.input<typeof _LoggerConfigSchema>
+export const LoggerConfigSchema = ZodAccelerator.build(_LoggerConfigSchema)

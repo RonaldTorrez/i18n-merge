@@ -1,4 +1,4 @@
-import { GetLoggerConfig, GetLoggerConfigSchema } from '@/logger/logger.schema'
+import { LoggerConfig, LoggerConfigSchema } from '@/logger/logger.schema'
 import { LoggerTypes } from '@/logger-types/logger-types.schema'
 import { fileLoadConfigTypes } from '@/logger-types/types/file-load-config.cli'
 import { Signale } from 'signale'
@@ -11,8 +11,10 @@ export const loggerTypes: LoggerTypes = {
     ...fileLoadConfigTypes,
 }
 
-export function getLoggerConfig(parameters: GetLoggerConfig): Logger {
-    const { logLevel } = GetLoggerConfigSchema.parse(parameters)
+export function initLoggerConfig(
+    parameters: LoggerConfig,
+): Logger {
+    const { logLevel } = LoggerConfigSchema.parse(parameters)
 
     logger ??= new Signale({
         logLevel,
