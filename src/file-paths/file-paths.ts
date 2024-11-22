@@ -1,13 +1,13 @@
-import { type GetFilePaths, GetFilePathsSchema } from '@/file-paths/file-paths.schema'
+import { type FilePaths, FilePathsSchema } from '@/file-paths/file-paths.schema'
 import fg, { type Entry } from 'fast-glob'
 
 export async function getFilePaths(
-    parameters: GetFilePaths,
+    parameters: FilePaths,
 ): Promise<Entry[]> {
     const {
         ignore,
         paths,
-    } = GetFilePathsSchema.parse(parameters)
+    } = FilePathsSchema.parse(parameters)
 
     return await fg(paths, {
         ignore,
