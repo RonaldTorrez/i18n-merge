@@ -1,6 +1,6 @@
 import { DEFAULT_NAMESPACE_SCHEMA, NODE_MODULE } from '@/app/const.app'
 import { _CosmiconfigSchema } from '@/cosmiconfig/cosmiconfig.schema'
-import { _FilePathsSchema } from '@/file-paths/file-paths.schema'
+import { _SearchFilePathsSchema } from '@/file-paths/file-paths.schema'
 import { _LoggerConfigSchema } from '@/logger/logger.schema'
 import { _StringNoNSchema } from '@/utils/string/string.schema'
 import { ZodAccelerator } from '@duplojs/zod-accelerator'
@@ -21,7 +21,7 @@ export const _i18nMergeConfigFileSchemaSchema = z.object({
 })
 
 export const _i18nMergeConfigFilesSchema = z.object({
-    files: _FilePathsSchema
+    files: _SearchFilePathsSchema
         .pick({
             ignore: true,
             paths: true,

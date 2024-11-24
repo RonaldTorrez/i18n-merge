@@ -3,8 +3,7 @@ import { _StringNoNArrayNoNSchema, _StringNoNArraySchema } from '@/utils/string/
 import { ZodAccelerator } from '@duplojs/zod-accelerator'
 import { z } from 'zod'
 
-// TODO Rename to SearchFiles or similar
-export const _FilePathsSchema = _LoggerSchema
+export const _SearchFilePathsSchema = _LoggerSchema
     .extend({
         ignore: _StringNoNArraySchema
             .default([])
@@ -16,6 +15,6 @@ export const _FilePathsSchema = _LoggerSchema
             ),
     })
 
-export type FilePaths = z.input<typeof _FilePathsSchema>
+export type SearchFilePaths = z.input<typeof _SearchFilePathsSchema>
 
-export const FilePathsSchema = ZodAccelerator.build(_FilePathsSchema)
+export const SearchFilePathsSchema = ZodAccelerator.build(_SearchFilePathsSchema)
