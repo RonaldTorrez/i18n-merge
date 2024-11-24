@@ -9,7 +9,6 @@ export const _FilesContentReturnSchema = z
         filename: _StringNoNSchema,
         path: _StringNoNSchema,
     })
-    .array()
     .describe('The schema of the file.')
 
 export type FilesContentReturn = z.input<typeof _FilesContentReturnSchema>
