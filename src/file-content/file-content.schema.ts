@@ -8,6 +8,7 @@ const _FileContentSchema = _LoggerSchema
     .extend({
         paths: z
             .array(z.custom<Entry>())
+            .min(1)
             .describe('The paths to load.'),
     })
     // @ts-ignore

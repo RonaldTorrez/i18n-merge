@@ -6,7 +6,7 @@ import { CosmiconfigResult, PublicExplorer } from 'cosmiconfig'
 
 export async function getFilesContent(
     parameters: FileContent,
-): Promise<FilesContentReturn[]> {
+): Promise<FilesContentReturn> {
     const { loaders, logger, paths } = FileContentSchema.parse(parameters)
     const cosmiconfig: PublicExplorer = initCosmiconfig({ loaders, logger })
 
