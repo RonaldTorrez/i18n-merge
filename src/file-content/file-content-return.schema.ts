@@ -9,7 +9,10 @@ export const _FilesContentReturnSchema = z
         filename: _StringNoNSchema,
         path: _StringNoNSchema,
     })
-    .describe('The schema of the file.')
+    .extend({
+        namespace: _StringNoNSchema.default(''),
+    })
+    .describe('The schema of the file content.')
 
 export type FilesContentReturn = z.input<typeof _FilesContentReturnSchema>
 export const FilesContentReturnSchema = ZodAccelerator.build(_FilesContentReturnSchema)
